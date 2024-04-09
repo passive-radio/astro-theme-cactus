@@ -3,6 +3,9 @@ import SocialList from "@/components/SocialList.astro";
 import PostPreview from "@/components/blog/PostPreview.astro";
 import PageLayout from "@/layouts/Base.astro";
 import { getAllPosts, sortMDByDate } from "@/data/post";
+import { Image } from "astro:assets";
+
+import eyeCatchImage from "../assets/eye-catch-sample.png";
 
 const MAX_POSTS = 10;
 const allPosts = await getAllPosts();
@@ -54,17 +57,21 @@ const cactusTech: { desc: string; href: string; title: string }[] = [
 
 <PageLayout meta={{ title: "Home" }}>
 	<section>
-		<h1 class="title mb-6">Hello World!</h1>
-		<p class="mb-4">
-			Hi, I’m a theme for Astro, an example of how you can use this starter to create a personal
-			blog. If you want to know more about how you can customise me, add more posts, and make it
-			your own, click on the github icon link below and it will take you to my repo.
-		</p>
-		<SocialList />
+		<div class="max-h-100 mb-2 w-full bg-red-200">
+			<Image src={eyeCatchImage} alt="アイキャッチ" />
+		</div>
+		<h1 class="title mb-2">Welcome to Yamato Lab!</h1>
+		<div class="flex min-h-20 items-center bg-neutral-200">
+			<p class="bg-slate- mb-4">
+				ここにグループの紹介文を書く。PCで表示したときに２行になるくらいのやつ
+			</p>
+		</div>
+		<!-- <SocialList /> -->
 	</section>
 	<section aria-label="Blog post list" class="mt-16">
-		<h2 class="title mb-4 text-xl">Posts</h2>
-		<ul class="space-y-4">
+		<h2 class="title mb-1 text-xl">Events</h2>
+		<hr class="mb-2 w-full border-2 border-neutral-100" />
+		<ul class="mb-4 block space-y-4">
 			{
 				allPostsByDate.map((p) => (
 					<li class="flex flex-col gap-x-2 sm:flex-row">
@@ -73,9 +80,18 @@ const cactusTech: { desc: string; href: string; title: string }[] = [
 				))
 			}
 		</ul>
+		<div class="relative h-auto w-full">
+			<div class="absolute right-0 block w-auto">
+				<a
+					class="relative block h-auto w-auto rounded-none bg-neutral-400 px-2 py-1 text-neutral-100"
+					href="/events/">View more</a
+				>
+			</div>
+		</div>
 	</section>
 	<section class="mt-16">
-		<h2 class="title mb-4 text-xl">Technologies</h2>
+		<h2 class="title mb-1 text-xl">News</h2>
+		<hr class="mb-2 w-full border-2 border-neutral-100" />
 		<dl class="space-y-4">
 			{
 				cactusTech.map(({ desc, href, title }) => (
@@ -93,5 +109,13 @@ const cactusTech: { desc: string; href: string; title: string }[] = [
 				))
 			}
 		</dl>
+		<div class="relative h-auto w-full">
+			<div class="absolute right-0 block w-auto">
+				<a
+					class="relative block h-auto w-auto rounded-none bg-neutral-400 px-2 py-1 text-neutral-100"
+					href="/news/">View more</a
+				>
+			</div>
+		</div>
 	</section>
 </PageLayout>

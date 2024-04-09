@@ -21,6 +21,16 @@ export default {
 		fontVariantNumeric: false,
 	},
 	theme: {
+		fontSize: {
+			xs: "1.0rem",
+			sm: "1.1rem",
+			base: "1.2rem",
+			xl: "1.3rem",
+			"2xl": "1.563rem",
+			"3xl": "1.953rem",
+			"4xl": "2.441rem",
+			"5xl": "3.052rem",
+		},
 		extend: {
 			colors: {
 				bgColor: "hsl(var(--theme-bg) / <alpha-value>)",
@@ -31,9 +41,11 @@ export default {
 				quote: "hsl(var(--theme-quote) / <alpha-value>)",
 			},
 			fontFamily: {
+				sans: ['"Noto Sans JP Variable"', ...fontFamily.sans],
 				// Add any custom fonts here
-				sans: [...fontFamily.sans],
-				serif: [...fontFamily.serif],
+				serif: ['"Noto Sans JP Variable"', ...fontFamily.serif],
+				mono: ['"Noto Sans JP Variable"', ...fontFamily.mono],
+				normal: ['"Noto Sans JP Variable"', ...fontFamily.mono],
 			},
 			transitionProperty: {
 				height: "height",

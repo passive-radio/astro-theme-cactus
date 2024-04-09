@@ -3,18 +3,18 @@ import type { AstroExpressiveCodeOptions } from "astro-expressive-code";
 
 export const siteConfig: SiteConfig = {
 	// Used as both a meta property (src/components/BaseHead.astro L:31 + L:49) & the generated satori png (src/pages/og-image/[slug].png.ts)
-	author: "Chris Williams",
+	author: "Yamaoto Takahisa",
 	// Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
-	title: "Astro Theme Cactus",
+	title: "Yamato Lab",
 	// Meta property used as the default description meta property
-	description: "An opinionated starter theme for Astro",
+	description: "Yamato Lab's official website.",
 	// HTML lang property, found in src/layouts/Base.astro L:18
-	lang: "en-GB",
+	lang: "ja",
 	// Meta property, found in src/components/BaseHead.astro L:42
-	ogLocale: "en_GB",
+	ogLocale: "jp",
 	// Date.prototype.toLocaleDateString() parameters, found in src/utils/date.ts.
 	date: {
-		locale: "en-GB",
+		locale: "ja-jp",
 		options: {
 			day: "numeric",
 			month: "short",
@@ -33,12 +33,24 @@ export const menuLinks: Array<{ title: string; path: string }> = [
 		path: "/",
 	},
 	{
-		title: "About",
-		path: "/about/",
+		title: "Members",
+		path: "/members/",
 	},
 	{
-		title: "Blog",
-		path: "/posts/",
+		title: "Research",
+		path: "/research/",
+	},
+	{
+		title: "News",
+		path: "/news/",
+	},
+	{
+		title: "Publications",
+		path: "/publications/",
+	},
+	{
+		title: "Links",
+		path: "/links/",
 	},
 ];
 
@@ -66,7 +78,7 @@ export const expressiveCodeOptions: AstroExpressiveCodeOptions = {
 		codeFontSize: "0.875rem",
 		codeLineHeight: "1.7142857rem",
 		borderRadius: "4px",
-		codePaddingInline: "1rem",
+		codePaddingInline: "1.05rem",
 		codeFontFamily:
 			'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;',
 	},
